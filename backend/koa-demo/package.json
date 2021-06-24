@@ -1,0 +1,16 @@
+{
+  "name": "koa-demo1",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "dependencies": {
+    "@koa/cors": "^3.1.0",
+    "koa": "^2.13.1",
+    "koa-body": "^4.2.0",
+    "koa-combine-routers": "^4.0.2",
+    "koa-helmet": "^6.1.0",
+    "koa-json": "^2.0.2",
+    "koa-router": "^10.0.0",
+    "koa-static": "^5.0.0"
+  }
+}
