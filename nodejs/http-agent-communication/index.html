@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>模擬原生跨域處理</title>
+  </head>
+  <style>
+    .is-show {
+      display: none;
+    }
+  </style>
+  <body>
+    <h1>我想要獲取資料</h1>
+    <button onclick="handleOnSubmit()">請點我</button>
+    <div id="showData" class="is-show">
+      <p>API</p>
+      <code id="showCode"></code>
+    </div>
+    <script type="text/javascript">
+      function handleOnSubmit() {
+        fetch('/api/frontend', {
+          method: 'GET',
+          headers: {
+            'content-type': 'application/json',
+          },
+        }).then((res) => res.json())
+          .then((res) => {
+            const { code, data } = res;
+            if (code === 200) {
+              showData.classList.remove('is-show');
+              showCode.innerHTML = JSON.stringify(data);
+            }
+          })
+      }
+    </script>
+  </body>
+</html>
